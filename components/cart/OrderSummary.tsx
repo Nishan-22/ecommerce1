@@ -15,7 +15,7 @@ export default function OrderSummary() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const shipping = subtotal > 50 ? 0 : 9.99;
+  const shipping = subtotal > 5000 ? 0 : 199;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -32,7 +32,9 @@ export default function OrderSummary() {
             <span className="text-muted-foreground">
               Subtotal ({itemCount} items)
             </span>
-            <span className="font-medium">${subtotal.toFixed(2)}</span>
+            <span className="font-medium">
+              NPR {subtotal.toLocaleString()}
+            </span>
           </div>
 
           <div className="flex justify-between text-sm">
@@ -43,14 +45,14 @@ export default function OrderSummary() {
                   Free
                 </Badge>
               ) : (
-                `$${shipping.toFixed(2)}`
+                `NPR ${shipping.toLocaleString()}`
               )}
             </span>
           </div>
 
           <div className="flex justify-between text-sm">
             <span className="text-muted-foreground">Tax</span>
-            <span className="font-medium">${tax.toFixed(2)}</span>
+            <span className="font-medium">NPR {tax.toLocaleString()}</span>
           </div>
 
           <Separator />
@@ -58,7 +60,7 @@ export default function OrderSummary() {
           <div className="flex justify-between">
             <span className="text-lg font-semibold">Total</span>
             <span className="text-lg font-bold text-primary">
-              ${total.toFixed(2)}
+              NPR {total.toLocaleString()}
             </span>
           </div>
         </div>
@@ -68,11 +70,11 @@ export default function OrderSummary() {
             <div className="flex items-center gap-2 mb-2">
               <Truck className="h-4 w-4 text-accent-foreground" />
               <span className="text-sm font-medium text-accent-foreground">
-                Free shipping on orders over $50
+                Free shipping on orders over NPR 5,000
               </span>
             </div>
             <p className="text-xs text-muted-foreground">
-              Add ${(50 - subtotal).toFixed(2)} more to qualify!
+              Add NPR {(5000 - subtotal).toLocaleString()} more to qualify!
             </p>
           </div>
         )}

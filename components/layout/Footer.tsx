@@ -75,7 +75,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="relative z-10 bg-background/70 backdrop-blur-md border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12 border-b border-border">
           <div className="max-w-2xl mx-auto text-center">
@@ -113,11 +113,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             <div className="lg:col-span-2">
               <Link
-                className="text-2xl tracking-tight text-gray-900 hover:text-gray-700 transition-colors"
+                className="text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
                 href="/"
-                aria-label="BloomShop Home"
+                aria-label="ShoeShop Home"
               >
-                BLOOM<span className="text-primary">SHOP</span>
+                SHOE<span className="text-primary">SHOP</span>
               </Link>
               <p className="text-muted-foreground mb-6 max-w-sm">
                 Discover unique products that inspire your lifestyle. Quality
@@ -135,7 +135,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span>hello@bloomshop.com</span>
+                  <span>hello@shoeshop.com</span>
                 </div>
               </div>
 
@@ -186,12 +186,14 @@ export default function Footer() {
         <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>© 2025 BloomShop™. Made with</span>
+              <span>© 2025 ShoeShop™. Made with</span>
               <Heart className="h-4 w-4 text-red-500 fill-current" />
               <span>All Rights Reserved.</span>
               <br />
             </div>
-            <p className="text-sm text-muted-foreground">Developed by <a href="https://github.com/bloomtpl" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition-colors">Bloomtpl</a> • Distributed by <a href="https://themewagon.com" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition-colors">ThemeWagon</a></p>
+            <p className="text-sm text-muted-foreground">
+              Developed by Nishan Paudel
+            </p>
           </div>
 
           <div className="flex items-center gap-6 text-sm">

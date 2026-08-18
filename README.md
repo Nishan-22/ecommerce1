@@ -1,23 +1,26 @@
-# BloomShop - Free Next.js Tailwind CSS E-Commerce Template
+# ShoeShop
 
-#### Preview
+A modern e-commerce web application for sneakers and footwear, built with Next.js, Tailwind CSS, and eSewa payment integration.
 
- - [Demo](https://themewagon.github.io/bloomtpl/)
+## Features
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/bloomtpl/)
+- Product catalog with search and product detail pages
+- Shopping cart with quantity management
+- User authentication (login / register / admin)
+- Admin dashboard for adding products and viewing orders
+- Image upload for products
+- eSewa payment gateway integration (sandbox for testing)
+- Dark theme with animated 3D background
 
 ## Getting Started
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/bloomtpl.git
-```
-2. Install Dependencies
+1. Install dependencies:
+
 ```
 npm i
 ```
-3. Run the development server:
+
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -28,6 +31,14 @@ pnpm dev
 # or
 bun dev
 ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [eSewa Payment Gateway](https://developer.esewa.com.np)
 
 ## eSewa Sandbox (Test) Credentials
 
@@ -42,13 +53,11 @@ Use these for development/testing only. Replace with your production credentials
 - Password: `Nepal@123`
 - OTP Token: `123456`
 
-## Author 
-```
-Design and code is completely written by Bloomtpl and development team. 
-```
+## Admin Login
+
+- Email: `admin@shoeshop.com`
+- Password: `admin123`
 
 ## License
 
- - Design and Code is Copyright &copy; <a href="https://github.com/bloomtpl" target="_blank">Bloomtpl</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+MIT

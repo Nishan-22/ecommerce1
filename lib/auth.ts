@@ -8,9 +8,9 @@ export interface SessionUser {
   role: "admin" | "customer";
 }
 
-const COOKIE_NAME = "bloom_session";
+const COOKIE_NAME = "shoeshop_session";
 const AUTH_SECRET =
-  process.env.AUTH_SECRET || "bloomshop-demo-secret-change-me";
+  process.env.AUTH_SECRET || "shoeshop-demo-secret-change-me";
 
 export function hashPassword(password: string): string {
   const salt = crypto.randomBytes(16).toString("hex");

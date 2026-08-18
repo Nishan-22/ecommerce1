@@ -65,19 +65,19 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-lg"
-          : "bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm"
+          ? "glass shadow-lg"
+          : "border-b border-border bg-background/70 backdrop-blur-md shadow-sm"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8 lg:space-x-12">
             <Link
-              className="text-2xl tracking-tight text-gray-900 hover:text-gray-700 transition-colors"
+              className="text-2xl tracking-tight text-foreground hover:text-white transition-colors"
               href="/"
-              aria-label="BloomShop Home"
+              aria-label="ShoeShop Home"
             >
-              BLOOM<span className="text-primary">SHOP</span>
+              SHOE<span className="text-primary">SHOP</span>
             </Link>
 
             <nav
@@ -91,8 +91,8 @@ export default function Header() {
                   href={href}
                   className={`relative py-2 px-4 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActivePath(href)
-                      ? "bg-orange-100 shadow-md"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      ? "bg-primary/20 text-primary shadow-md"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
                   }`}
                   aria-current={isActivePath(href) ? "page" : undefined}
                 >
@@ -109,41 +109,41 @@ export default function Header() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                className="w-full pl-10 pr-4 py-2 text-sm border border-border rounded-full bg-background/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 aria-label="Search products"
               />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             </form>
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-4">
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="lg:hidden p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-full hover:bg-muted transition-colors"
               aria-label="Search"
             >
-              <Search className="h-5 w-5 text-gray-700" />
+              <Search className="h-5 w-5 text-foreground" />
             </button>
 
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-full hover:bg-muted transition-colors"
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileOpen}
             >
               {isMobileOpen ? (
-                <X className="h-6 w-6 text-gray-700" />
+                <X className="h-6 w-6 text-foreground" />
               ) : (
-                <Menu className="h-6 w-6 text-gray-700" />
+                <Menu className="h-6 w-6 text-foreground" />
               )}
             </button>
 
             <Link
               href="/cart"
-              className="relative p-2 rounded-full hover:bg-gray-100 transition-all duration-200 group"
+              className="relative p-2 rounded-full hover:bg-muted transition-all duration-200 group"
               aria-label={`Shopping cart with ${cartCount} items`}
             >
-              <ShoppingCart className="h-6 w-6 text-gray-700 group-hover:text-gray-900 transition-colors" />
+              <ShoppingCart className="h-6 w-6 text-foreground group-hover:text-primary transition-colors" />
               {cartCount > 0 && (
                 <span
                   className="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full min-w-[20px] h-5 flex items-center justify-center px-1"
@@ -206,11 +206,11 @@ export default function Header() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 text-sm border border-border rounded-lg bg-background/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 aria-label="Search products"
                 autoFocus
               />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             </form>
           </div>
         )}
@@ -221,7 +221,7 @@ export default function Header() {
             role="navigation"
             aria-label="Mobile navigation"
           >
-            <div className="flex flex-col space-y-3 pb-4 border-b border-gray-200">
+            <div className="flex flex-col space-y-3 pb-4 border-b border-border">
               {navItems.map(({ href, label }) => (
                 <Link
                   key={href}
@@ -229,8 +229,8 @@ export default function Header() {
                   onClick={closeMobileMenu}
                   className={`text-sm font-medium py-2 px-3 rounded-lg transition-all ${
                     isActivePath(href)
-                      ? "bg-orange-100"
-                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                      ? "bg-primary/20 text-primary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                   aria-current={isActivePath(href) ? "page" : undefined}
                 >

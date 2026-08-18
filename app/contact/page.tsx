@@ -55,7 +55,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@bloomshop.com", "support@bloomshop.com"],
+      details: ["hello@shoeshop.com", "support@shoeshop.com"],
       description: "Send us an email anytime",
     },
     {
@@ -97,8 +97,8 @@ export default function Contact() {
   ];
 
   return (
-    <div className="bg-background">
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-accent/5">
+    <div className="relative">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <Badge className="mb-6 bg-primary text-primary-foreground">
@@ -308,7 +308,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-24 bg-muted/30">
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-6">
@@ -328,7 +328,7 @@ export default function Contact() {
               {
                 question: "What are your shipping policies?",
                 answer:
-                  "We offer free shipping on orders over $50. Standard shipping takes 3-5 business days.",
+                  "We offer free shipping on orders over NPR 5,000. Standard shipping takes 3-5 business days.",
               },
               {
                 question: "How can I track my order?",

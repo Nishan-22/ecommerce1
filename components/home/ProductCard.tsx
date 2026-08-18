@@ -120,7 +120,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
         <div className="flex items-center gap-2">
           <span className="text-lg font-bold text-foreground">
-            ${product.price.toFixed(2)}
+            NPR {product.price.toLocaleString()}
           </span>
         </div>
 

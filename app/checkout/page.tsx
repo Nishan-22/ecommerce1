@@ -34,7 +34,7 @@ export default function Checkout() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const shipping = subtotal > 50 ? 0 : 9.99;
+  const shipping = subtotal > 5000 ? 0 : 199;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
 
@@ -64,7 +64,7 @@ export default function Checkout() {
           transactionUuid,
           productServiceCharge: 0,
           productDeliveryCharge: shipping,
-          productName: `Bloom Order ${transactionUuid.slice(0, 8)}`,
+          productName: `ShoeShop Order ${transactionUuid.slice(0, 8)}`,
         }),
       });
 
@@ -235,7 +235,7 @@ export default function Checkout() {
                     {item.name} × {item.quantity}
                   </span>
                   <span className="font-medium">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    NPR {(item.price * item.quantity).toLocaleString()}
                   </span>
                 </div>
               ))}
@@ -244,17 +244,17 @@ export default function Checkout() {
 
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Subtotal</span>
-                <span className="font-medium">${subtotal.toFixed(2)}</span>
+                <span className="font-medium">NPR {subtotal.toLocaleString()}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Shipping</span>
                 <span className="font-medium">
-                  {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
+                  {shipping === 0 ? "Free" : `NPR ${shipping.toLocaleString()}`}
                 </span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Tax</span>
-                <span className="font-medium">${tax.toFixed(2)}</span>
+                <span className="font-medium">NPR {tax.toLocaleString()}</span>
               </div>
 
               <Separator />
@@ -262,7 +262,7 @@ export default function Checkout() {
               <div className="flex justify-between">
                 <span className="text-lg font-semibold">Total</span>
                 <span className="text-lg font-bold text-primary">
-                  ${total.toFixed(2)}
+                  NPR {total.toLocaleString()}
                 </span>
               </div>
 

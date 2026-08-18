@@ -69,7 +69,7 @@ export default function RelatedProducts({ product }: RelatedProductsProps) {
                   {relatedProduct.name}
                 </h3>
                 <p className="text-lg font-bold text-primary">
-                  ${relatedProduct.price.toFixed(2)}
+                  NPR {relatedProduct.price.toLocaleString()}
                 </p>
               </CardContent>
             </Link>

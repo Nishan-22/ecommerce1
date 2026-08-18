@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ImagePlus, Loader2, X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface AdminUser {
   name: string;
@@ -38,6 +39,9 @@ export default function AdminPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [imagePreview, setImagePreview] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     async function init() {
@@ -68,6 +72,44 @@ export default function AdminPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setError("");
+    setMessage("");
+
+    try {
+      const previewUrl = URL.createObjectURL(file);
+      setImagePreview(previewUrl);
+
+      const body = new FormData();
+      body.append("file", file);
+
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body,
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Upload failed");
+
+      setForm({ ...form, image: data.url });
+    } catch (err) {
+      setImagePreview("");
+      setError(err instanceof Error ? err.message : "Upload failed");
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setForm({ ...form, image: "" });
+    setImagePreview("");
+  };
+
   const handleAddProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
@@ -91,6 +133,7 @@ export default function AdminPage() {
 
       setMessage("Product added successfully!");
       setForm({ name: "", price: "", image: "", description: "" });
+      setImagePreview("");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to add product");
     } finally {
@@ -149,13 +192,55 @@ export default function AdminPage() {
               </div>
               <div>
                 <label className="text-sm font-medium mb-1.5 block">
-                  Image URL
+                  Product Image
                 </label>
-                <Input
-                  name="image"
-                  placeholder="https://example.com/image.jpg"
-                  value={form.image}
-                  onChange={handleChange}
+                {imagePreview || form.image ? (
+                  <div className="relative w-48 h-48 rounded-lg border border-border overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={imagePreview || form.image}
+                      alt="Product preview"
+                      className="w-full h-full object-cover"
+                    />
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      size="icon"
+                      className="absolute top-2 right-2 h-7 w-7"
+                      onClick={handleRemoveImage}
+                      aria-label="Remove image"
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="w-full flex flex-col items-center justify-center gap-2 py-8 rounded-lg border-2 border-dashed border-border bg-background/40 hover:border-primary hover:bg-primary/5 transition-colors cursor-pointer"
+                  >
+                    <ImagePlus className="h-8 w-8 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">
+                      {uploading ? (
+                        <span className="flex items-center gap-2">
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          Uploading...
+                        </span>
+                      ) : (
+                        "Click to browse and upload an image"
+                      )}
+                    </span>
+                    <span className="text-xs text-muted-foreground/70">
+                      JPEG, PNG, WebP or GIF • max 5MB
+                    </span>
+                  </button>
+                )}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp,image/gif"
+                  onChange={handleImageUpload}
+                  className="hidden"
                 />
               </div>
               <div>
