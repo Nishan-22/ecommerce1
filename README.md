@@ -29,6 +29,19 @@ pnpm dev
 bun dev
 ```
 
+## eSewa Sandbox (Test) Credentials
+
+Use these for development/testing only. Replace with your production credentials when going live.
+
+**Merchant (API) credentials:**
+- Merchant ID / Product Code: `EPAYTEST`
+- Secret Key: `8gBm/:&EnH.1/q`
+
+**Test user login (to make payments in sandbox):**
+- eSewa ID: `9806800001` (also `9806800002` - `9806800005` available)
+- Password: `Nepal@123`
+- OTP Token: `123456`
+
 ## Author 
 ```
 Design and code is completely written by Bloomtpl and development team. 
