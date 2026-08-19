@@ -1,18 +1,23 @@
-import ProductList from "@/components/home/ProductList";
+import CategoryShowcase from "@/components/home/CategoryShowcase";
+import FeaturedProducts from "@/components/home/FeaturedProducts";
+import Hero from "@/components/home/Hero";
+import Newsletter from "@/components/home/Newsletter";
+import PromoBanner from "@/components/home/PromoBanner";
+import Testimonials from "@/components/home/Testimonials";
+import TrustBar from "@/components/home/TrustBar";
+import WhyUs from "@/components/home/WhyUs";
 
 export default function Home() {
   return (
-    <div className="relative px-4 py-8 sm:py-12 lg:py-16 lg:px-8 min-h-screen">
-      <div className="text-center mx-auto mb-18 space-y-3">
-        <h1 className="text-gradient leading-tighter text-4xl font-semibold tracking-tight text-balance lg:leading-[1.1] lg:font-semibold xl:text-5xl xl:tracking-tighter">
-          Step Into Style
-        </h1>
-        <p className="text-muted-foreground text-base max-w-3xl mx-auto text-balance sm:text-lg">
-          Discover our latest collection of premium sneakers — comfort, design,
-          and performance in every pair.
-        </p>
-      </div>
-      <ProductList />
+    <div className="relative">
+      <Hero />
+      <TrustBar />
+      <CategoryShowcase />
+      <FeaturedProducts />
+      <PromoBanner />
+      <WhyUs />
+      <Testimonials />
+      <Newsletter />
     </div>
   );
 }

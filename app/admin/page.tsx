@@ -32,6 +32,7 @@ export default function AdminPage() {
   const [form, setForm] = useState({
     name: "",
     price: "",
+    category: "",
     image: "",
     description: "",
   });
@@ -67,7 +68,9 @@ export default function AdminPage() {
   }, [router]);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -123,6 +126,7 @@ export default function AdminPage() {
         body: JSON.stringify({
           name: form.name,
           price: Number(form.price),
+          category: form.category,
           image: form.image,
           description: form.description,
         }),
@@ -132,7 +136,7 @@ export default function AdminPage() {
       if (!res.ok) throw new Error(data.error || "Failed to add product");
 
       setMessage("Product added successfully!");
-      setForm({ name: "", price: "", image: "", description: "" });
+      setForm({ name: "", price: "", category: "", image: "", description: "" });
       setImagePreview("");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to add product");
@@ -189,6 +193,25 @@ export default function AdminPage() {
                   onChange={handleChange}
                   required
                 />
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  Category
+                </label>
+                <select
+                  name="category"
+                  value={form.category}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 text-sm rounded-md border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                >
+                  <option value="">Select a category</option>
+                  <option value="Running">Running</option>
+                  <option value="Lifestyle">Lifestyle</option>
+                  <option value="Retro">Retro</option>
+                  <option value="Performance">Performance</option>
+                  <option value="Casual">Casual</option>
+                  <option value="High-Tops">High-Tops</option>
+                </select>
               </div>
               <div>
                 <label className="text-sm font-medium mb-1.5 block">

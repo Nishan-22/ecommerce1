@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { name, price, image, description } = await request.json();
+  const { name, price, category, image, description } = await request.json();
 
   if (!name || !price) {
     return NextResponse.json(
@@ -29,6 +29,7 @@ export async function POST(request: NextRequest) {
     id: products.length ? Math.max(...products.map((p) => p.id)) + 1 : 1,
     name,
     price: Number(price),
+    category: category || undefined,
     image: image || undefined,
     description: description || undefined,
   };

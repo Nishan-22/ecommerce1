@@ -1,5 +1,5 @@
 import Header from "@/components/layout/Header";
-import AnimatedBackground from "@/components/layout/AnimatedBackground";
+import Background from "@/components/layout/Background";
 import { CartProvider } from "@/context/CartContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${inter.className}  antialiased flex flex-col min-h-screen`}
       >
         <CartProvider>
-          <AnimatedBackground />
+          <Background />
           <Header />
           <main className="relative z-10 flex-grow">{children}</main>
         </CartProvider>
