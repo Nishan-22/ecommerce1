@@ -1,4 +1,3 @@
-import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import AnimatedBackground from "@/components/layout/AnimatedBackground";
 import { CartProvider } from "@/context/CartContext";
@@ -32,7 +31,6 @@ export default function RootLayout({
           <AnimatedBackground />
           <Header />
           <main className="relative z-10 flex-grow">{children}</main>
-          <Footer />
         </CartProvider>
       </body>
     </html>
