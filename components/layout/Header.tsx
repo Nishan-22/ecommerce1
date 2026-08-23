@@ -73,7 +73,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8 lg:space-x-12">
             <Link
-              className="text-2xl tracking-tight text-foreground hover:text-white transition-colors"
+              className="text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
               href="/"
               aria-label="ShoeShop Home"
             >

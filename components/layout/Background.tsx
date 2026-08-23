@@ -8,14 +8,14 @@ export default function Background() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% -10%, oklch(0.45 0.15 300 / 0.22), transparent 70%)",
+            "radial-gradient(ellipse 70% 50% at 50% -10%, oklch(0.75 0.14 300 / 0.25), transparent 70%)",
         }}
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 90% 110%, oklch(0.5 0.12 200 / 0.16), transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 90% 110%, oklch(0.78 0.1 205 / 0.2), transparent 70%)",
         }}
       />
     </div>
