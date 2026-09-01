@@ -2,6 +2,7 @@
 
 import { useCart } from "@/context/CartContext";
 import { LogOut, Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
@@ -117,6 +118,8 @@ export default function Header() {
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-4">
+            <ThemeToggle />
+
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
               className="lg:hidden p-2 rounded-full hover:bg-muted transition-colors"

@@ -36,7 +36,7 @@ export function buildSignature({
   productCode,
   secretKey,
 }: {
-  totalAmount: number;
+  totalAmount: string;
   transactionUuid: string;
   productCode: string;
   secretKey: string;

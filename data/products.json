@@ -78,5 +78,12 @@
     "category": "Running",
     "image": "https://images.unsplash.com/photo-1496202703211-aa28e9500c30?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "description": "Ultra-light sneakers designed for everyday mobility. Breathable and flexible design."
+  },
+  {
+    "id": 11,
+    "name": "goldstar arc",
+    "price": 500,
+    "category": "Lifestyle",
+    "image": "/uploads/1787192634900-90170f0b3bb6.jpeg"
   }
 ]

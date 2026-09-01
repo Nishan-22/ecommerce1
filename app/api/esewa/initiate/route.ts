@@ -27,8 +27,10 @@ export async function POST(request: NextRequest) {
     const failureUrl =
       ESEWA_CONFIG.failureUrl || `${baseUrl}/payment/cancel`;
 
+    const totalAmount = body.totalAmount.toFixed(2);
+
     const signature = buildSignature({
-      totalAmount: body.totalAmount,
+      totalAmount,
       transactionUuid: body.transactionUuid,
       productCode: ESEWA_CONFIG.productCode,
       secretKey: ESEWA_CONFIG.secretKey,
@@ -37,7 +39,7 @@ export async function POST(request: NextRequest) {
     const formData = {
       amount: body.amount.toFixed(2),
       tax_amount: body.taxAmount.toFixed(2),
-      total_amount: body.totalAmount.toFixed(2),
+      total_amount: totalAmount,
       transaction_uuid: body.transactionUuid,
       product_code: ESEWA_CONFIG.productCode,
       product_service_charge: body.productServiceCharge.toFixed(2),
