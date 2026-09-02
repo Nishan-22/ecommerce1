@@ -34,7 +34,7 @@ export default function Checkout() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const shipping = subtotal > 5000 ? 0 : 199;
+  const shipping = 0;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
 
@@ -248,9 +248,7 @@ export default function Checkout() {
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Shipping</span>
-                <span className="font-medium">
-                  {shipping === 0 ? "Free" : `NPR ${shipping.toLocaleString()}`}
-                </span>
+                <span className="font-medium">Free</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Tax</span>

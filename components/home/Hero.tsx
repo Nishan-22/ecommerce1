@@ -100,7 +100,7 @@ export default function Hero() {
                   Free Shipping
                 </p>
                 <p className="text-[11px] text-muted-foreground">
-                  On orders over NPR 5,000
+                  On all orders
                 </p>
               </div>
             </div>

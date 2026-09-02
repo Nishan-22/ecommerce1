@@ -328,7 +328,7 @@ export default function Contact() {
               {
                 question: "What are your shipping policies?",
                 answer:
-                  "We offer free shipping on orders over NPR 5,000. Standard shipping takes 3-5 business days.",
+                  "We offer free shipping on all orders. Standard shipping takes 3-5 business days.",
               },
               {
                 question: "How can I track my order?",

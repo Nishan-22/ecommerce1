@@ -43,7 +43,7 @@ function SuccessContent() {
                 (sum, item) => sum + item.price * item.quantity,
                 0
               );
-              const shipping = subtotal > 5000 ? 0 : 199;
+              const shipping = 0;
               const tax = subtotal * 0.08;
 
               await fetch("/api/orders", {

@@ -4,7 +4,7 @@ const perks = [
   {
     icon: Truck,
     title: "Free Shipping",
-    description: "On orders over NPR 5,000",
+    description: "On all orders",
   },
   {
     icon: RotateCcw,
