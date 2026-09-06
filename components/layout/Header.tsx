@@ -1,7 +1,16 @@
 "use client";
 
 import { useCart } from "@/context/CartContext";
-import { LogOut, Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import {
+  LogOut,
+  Menu,
+  RotateCcw,
+  Search,
+  ShoppingCart,
+  Truck,
+  User,
+  X,
+} from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -70,6 +79,18 @@ export default function Header() {
           : "border-b border-border bg-background/70 backdrop-blur-md shadow-sm"
       }`}
     >
+      <div className="bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-6 sm:gap-10 py-1.5 text-[11px] sm:text-xs font-medium">
+          <p className="flex items-center gap-1.5">
+            <Truck className="h-3.5 w-3.5" />
+            Free Shipping On All Orders
+          </p>
+          <p className="flex items-center gap-1.5">
+            <RotateCcw className="h-3.5 w-3.5" />
+            30-Day Returns
+          </p>
+        </div>
+      </div>
       <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8 lg:space-x-12">
