@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, Star, Truck } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -91,30 +91,6 @@ export default function Hero() {
                 className="w-full h-full object-cover aspect-square"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            </div>
-
-            <div className="glass absolute top-5 left-5 flex items-center gap-3 rounded-xl px-4 py-3 animate-blob-float">
-              <Truck className="h-5 w-5 text-primary" />
-              <div>
-                <p className="text-xs font-semibold text-foreground">
-                  Free Shipping
-                </p>
-                <p className="text-[11px] text-muted-foreground">
-                  On all orders
-                </p>
-              </div>
-            </div>
-
-            <div className="glass absolute bottom-5 right-5 flex items-center gap-3 rounded-xl px-4 py-3 animate-blob-drift">
-              <ShieldCheck className="h-5 w-5 text-primary" />
-              <div>
-                <p className="text-xs font-semibold text-foreground">
-                  30-Day Returns
-                </p>
-                <p className="text-[11px] text-muted-foreground">
-                  No questions asked
-                </p>
-              </div>
             </div>
           </div>
         </div>
