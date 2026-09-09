@@ -21,7 +21,6 @@ import {
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getSession } from "@/lib/auth";
 
 export default function Product() {
   const { addToCart } = useCart();

@@ -19,7 +19,7 @@ interface FormData {
 }
 
 export default function Checkout() {
-  const { cart, clearCart } = useCart();
+  const { cart } = useCart();
   const [form, setForm] = useState<FormData>({
     name: "",
     email: "",
