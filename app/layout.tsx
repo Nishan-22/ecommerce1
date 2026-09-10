@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ShoeShop",
+  title: "Pokhreli Shoe Shop",
   description:
-    "Discover a wide selection of trendy sneakers, shoes and accessories on ShoeShop. Enjoy fast delivery and free returns. Shop now!",
+    "Discover a wide selection of trendy sneakers, shoes and accessories on Pokhreli Shoe Shop. Enjoy fast delivery and free returns. Shop now!",
 };
 
 export default function RootLayout({

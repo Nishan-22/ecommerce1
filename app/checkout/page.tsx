@@ -64,7 +64,7 @@ export default function Checkout() {
           transactionUuid,
           productServiceCharge: 0,
           productDeliveryCharge: shipping,
-          productName: `ShoeShop Order ${transactionUuid.slice(0, 8)}`,
+          productName: `Pokhreli Shoe Shop Order ${transactionUuid.slice(0, 8)}`,
         }),
       });
 

@@ -97,9 +97,9 @@ export default function Header() {
             <Link
               className="text-2xl tracking-tight text-foreground hover:text-primary transition-colors"
               href="/"
-              aria-label="ShoeShop Home"
+              aria-label="Pokhreli Shoe Shop Home"
             >
-              SHOE<span className="text-primary">SHOP</span>
+              POKHRELI <span className="text-primary">SHOE SHOP</span>
             </Link>
 
             <nav

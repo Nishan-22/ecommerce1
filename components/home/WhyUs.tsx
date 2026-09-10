@@ -29,7 +29,7 @@ export default function WhyUs() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mx-auto max-w-2xl mb-12 space-y-3">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Why ShoeShop
+            Why Pokhreli Shoe Shop
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
             Built Different, Worn Better

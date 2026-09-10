@@ -1,4 +1,4 @@
-# ShoeShop
+# Pokhreli Shoe Shop
 
 A modern e-commerce web application for sneakers and footwear, built with Next.js, Tailwind CSS, and eSewa payment integration.
 
@@ -55,7 +55,7 @@ Use these for development/testing only. Replace with your production credentials
 
 ## Admin Login
 
-- Email: `admin@shoeshop.com`
+- Email: `admin@pokhrelishoeshop.com`
 - Password: `admin123`
 
 ## License
