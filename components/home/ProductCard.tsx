@@ -61,7 +61,7 @@ export default function ProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <Card className="group overflow-hidden bg-card border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+    <Card className="group overflow-hidden bg-transparent border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
       <div className="relative overflow-hidden">
         <Button
           variant="ghost"
