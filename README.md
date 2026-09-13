@@ -1,5 +1,10 @@
 # Pokhreli Shoe Shop
 
+![CI](https://img.shields.io/github/actions/workflow/status/Nishan-22/ecommerce1/ci.yml?branch=main&label=CI)
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 A modern e-commerce web application for sneakers and footwear, built with Next.js, Tailwind CSS, and eSewa payment integration.
 
 ## Features
@@ -33,6 +38,16 @@ bun dev
 ```
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Development Scripts
+
+| Script              | Description                              |
+| ------------------- | ---------------------------------------- |
+| `npm run dev`       | Start the development server             |
+| `npm run build`     | Create a production build                |
+| `npm run start`     | Serve the production build locally       |
+| `npm run lint`      | Run ESLint across the codebase           |
+| `npm run typecheck` | Run the TypeScript compiler (`--noEmit`) |
 
 ## Tech Stack
 

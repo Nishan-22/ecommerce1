@@ -1,0 +1,64 @@
+name: Bug Report
+description: Report a bug in Pokhreli Shoe Shop
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue. Please fill out as much detail as possible.
+  - type: input
+    id: url
+    attributes:
+      label: Page / URL
+      description: Which page or route did the bug occur on?
+      placeholder: e.g. /shop, /checkout
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did you run into this?
+      options:
+        - Local development
+        - Production / Vercel
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened and what did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Go to ...
+        2. Click on ...
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: Browser and version, if relevant
+      placeholder: e.g. Chrome 136, Firefox 136
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Paste any error messages, console output, or add screenshots.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I have searched for an existing issue covering this bug
+        - label: I can reproduce this on the latest `main` branch
