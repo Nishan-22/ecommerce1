@@ -73,6 +73,29 @@ Use these for development/testing only. Replace with your production credentials
 - Email: `admin@pokhrelishoeshop.com`
 - Password: `admin123`
 
+## Workflow
+
+### CI (`ci.yml`)
+
+Runs on every push and pull request to `main`.
+
+| Job | What it does |
+| --- | --- |
+| **Lint & Typecheck** | Installs dependencies, runs `npm run lint` (ESLint) and `npm run typecheck` (TypeScript `--noEmit`) |
+| **Build** | Installs dependencies and runs `npm run build` (Next.js production build) |
+
+Concurrency is enabled — duplicate runs for the same branch are cancelled automatically.
+
+### Release (`release.yml`)
+
+Triggered when a tag matching `v*` is pushed (e.g. `v1.0.0`). Creates a GitHub Release with auto-generated release notes.
+
+```bash
+# Tag and push a release
+git tag v1.0.0
+git push origin v1.0.0
+```
+
 ## License
 
 MIT
