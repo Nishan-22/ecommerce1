@@ -55,7 +55,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@pokhrelishoeshop.com", "support@pokhrelishoeshop.com"],
+      details: ["hello@shoeshop.com", "support@shoeshop.com"],
       description: "Send us an email anytime",
     },
     {

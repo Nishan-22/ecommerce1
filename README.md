@@ -1,4 +1,4 @@
-# Pokhreli Shoe Shop
+# ShoeShop
 
 ![CI](https://img.shields.io/github/actions/workflow/status/Nishan-22/ecommerce1/ci.yml?branch=main&label=CI)
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
@@ -70,7 +70,7 @@ Use these for development/testing only. Replace with your production credentials
 
 ## Admin Login
 
-- Email: `admin@pokhrelishoeshop.com`
+- Email: `admin@shoeshop.com`
 - Password: `admin123`
 
 ## Workflow
