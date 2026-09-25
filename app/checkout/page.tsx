@@ -205,7 +205,7 @@ export default function Checkout() {
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-3 p-4 rounded-lg border border-border bg-accent/10">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-600 text-white font-bold text-sm">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-sm">
                   eS
                 </div>
                 <div>
@@ -272,7 +272,7 @@ export default function Checkout() {
 
               <Button
                 size="lg"
-                className="w-full bg-green-600 hover:bg-green-700"
+                className="w-full bg-indigo-600 hover:bg-indigo-700"
                 onClick={handlePay}
                 disabled={loading}
               >

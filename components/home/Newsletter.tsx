@@ -34,7 +34,7 @@ export default function Newsletter() {
             </p>
 
             {subscribed ? (
-              <div className="mx-auto max-w-md rounded-xl bg-green-600/15 border border-green-600/30 px-6 py-4 text-sm text-green-700">
+              <div className="mx-auto max-w-md rounded-xl bg-indigo-600/15 border border-indigo-600/30 px-6 py-4 text-sm text-indigo-700">
                 You&rsquo;re in! Check your inbox for a welcome gift. 🎉
               </div>
             ) : (
